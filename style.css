@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  background-color: rgb(226, 226, 226);
+}
+p {
+  color: black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.Top {
+  width: 50%;
+}
+
+.Button-div {
+  margin-top: 20px;
+  margin-left: 71px;
+}
+
+.Button-div button {
+  border: 1px solid black;
+}
+#myInput {
+  border-radius: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: darkgrey;
+  height: 70px;
+}
+
+.Input-div {
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+.Input-div input[type="number"] {
+  position: absolute;
+  background: white;
+  border: hsl(0, 0%, 18.82%);
+  box-shadow: black;
+  width: 40%;
+  height: 50px;
+
+  -moz-appearance: textfield;
+}
+
+.middle {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+
+.middle-box {
+  display: block;
+  position: absolute;
+  background: white;
+  border-radius: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: darkgrey;
+  box-shadow: black;
+  width: 40%;
+  height: 70px;
+  z-index: 1;
+}
+
+.middle-p {
+  color: black;
+  z-index: 998;
+  margin-top: 25px;
+}
+
+.middle-2 {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 100%;
+  margin-top: 80px;
+}
+.middle-output {
+  display: block;
+  position: absolute;
+  background: white;
+  border: hsl(0, 0%, 18.82%);
+  box-shadow: black;
+  border-radius: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: darkgrey;
+  width: 40%;
+  height: 70px;
+  z-index: 1;
+}
+
+.middle-output p {
+  color: black;
+  margin-top: 25px;
+  z-index: 998;
+}
+
+.display-rumus {
+  display: block;
+  margin-top: 90px;
+}
+.display-rumus h1 {
+  color: black;
+}
+
+.display-rumus p {
+  color: black;
+}
+
+#myButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}

@@ -1,0 +1,70 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Konversi Suhu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="script.js" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="Top">
+      <h1>Kalkulator Suhu</h1>
+      <p>
+        Masukkan suhu derajat Celcius (&degC) ke kotak dibawah, lalu klik tombol
+        konversi untuk mendapatkan hasil konversi dalam bentuk Farenheit (&degF)
+      </p>
+    </div>
+    <div class="Form-div">
+      <p>Celcius (&degC)</p>
+      <form action="" id="my-form">
+        <div class="input-div">
+          <input
+            type="number"
+            name="input"
+            id="myInput"
+            placeholder="Enter temperature"
+          />
+        </div>
+        <br />
+        <div class="Button-div">
+          <button type="button" id="myButton" onclick="Kalkulasi()">
+            Konversi
+          </button>
+          <button type="button" onclick="Reset()">Reset</button>
+          <button type="button" onclick="Reverse()">Reverse</button>
+        </div>
+      </form>
+    </div>
+    <div class="middle">
+      <p>Farenheit (&degF)</p>
+      <div class="middle-box"><p id="output" class="middle-p"></p></div>
+    </div>
+    <div class="middle-2">
+      <p>Cara Kalkulasi :</p>
+      <div class="middle-output">
+        <p id="caraKalkulasi" class="middle-p-output"></p>
+      </div>
+    </div>
+
+    <div class="display-rumus">
+      <h1>Cara Konversi Dari Celcius (&degC) ke Farenheit (&degF)</h1>
+      <p>
+        Suhu S dalam derajat Farenheit (&degF) sama dengan suhu S dalam derajat
+        Celcius (&degC) 9/5 tambah 32
+      </p>
+      <p>\(S_{(&degF)} = ({S_{(&degC)}} \times 9/5) + 32 \)</p>
+      <p>atau</p>
+      <p>\(S_{(&degF)} = ({S_{(&degC)}} \times 1.8) + 32 \)</p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- variabel naming look like shit but i do it on purpose because im lazy sorry for that-->

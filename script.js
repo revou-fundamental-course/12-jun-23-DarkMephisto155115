@@ -1,46 +1,80 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var button = document.getElementById("myButton");
-    button.style.left = 50 + "%";
-    button.style.top = 50 + "%";
-    button.addEventListener("mouseover", function () {
-        
-      var input = document.getElementById("myInput").value;
-      if (input == null || input == "") {
-        var width = window.innerWidth;
-        var height = window.innerHeight;
-        var x = Math.random() * (width - button.offsetWidth);
-        var y = Math.random() * (height - button.offsetHeight);
 
-        button.style.left = x + "px";
-        button.style.top = y + "px";
-      } else {
-        button.style.left = 50 + "%";
-        button.style.top = 50 + "%";
-      }
-    });
-  });
-  var input;
-  var hasil;
-  function Kalkulasi() {
-    input = document.getElementById("myInput").value;
-    hasil = input * (9 / 5) + 32;
-    console.log(hasil);
-    document.getElementById("output").innerText = hasil;
+function convertCelcius() {
+  var celciusInput = document.getElementById("input");
+  var result = document.getElementById("hasil");
 
-    document.getElementById("caraKalkulasi").innerHTML =
-      "<p> (" +
-      input +
-      " &degC " +
-      " X 9/5) + 32 = " +
-      hasil +
-      " &deg" +
-      "F </p>";
+  
+  if (celciusInput.value === "" || isNaN(celciusInput.value)) {
+    alert("Masukkan temperature Celcius yang valid");
+    resetFields();
+    return;
+  } else {
+    
+    var celcius = parseFloat(celciusInput.value);
+    var fahrenheit = (celcius * 9) / 5 + 32;
+
+    
+    result.textContent = "Hasil : " + celcius + "°C = " + fahrenheit + "°F";
+    rumus.textContent =
+      "Rumus : " + fahrenheit + "°F = " + celcius + "°C * (9/5) + 32 ";
+  }
+}
+
+function reverseButtonC() {
+  
+  location.reload();
+}
+
+
+function reverseButtonF() {
+  resetButton();
+  var fahrenheitInput = document.getElementById("input");
+  var label = document.querySelector('label[for="input"]');
+  var convertButton = document.querySelector(
+    'button[onclick="convertCelcius()"]'
+  );
+  var reverseButtonF = document.querySelector(
+    'button[onclick="reverseButtonF()"]'
+  );
+
+  
+  label.textContent = "Fahrenheit:";
+  fahrenheitInput.placeholder = "Masukkan temperature dalam Fahrenheit";
+
+  
+  convertButton.setAttribute("onclick", "convertFahrenheit()");
+  reverseButtonF.setAttribute("onclick", "reverseButtonC()");
+}
+
+
+function convertFahrenheit() {
+  var fahrenheitInput = document.getElementById("input");
+  var result = document.getElementById("hasil");
+  var logic = document.getElementById("rumus");
+
+  
+  if (fahrenheitInput.value === "" || isNaN(fahrenheitInput.value)) {
+    alert("Masukkan temperature Farenheit yang valid");
+    return;
   }
 
-  function Reset() {
-    document.getElementById("myInput").value = "";
-    document.getElementById("output").innerText = "";
-    document.getElementById("caraKalkulasi").innerHTML = "";
-  }
+  
+  var fahrenheit = parseFloat(fahrenheitInput.value);
+  var celcius = ((fahrenheit - 32) * 5) / 9;
 
-  function Reverse() {}
+  
+  result.textContent = "Hasil = " + fahrenheit + "°F = " + celcius + "°C";
+  logic.textContent =
+    "Rumus = " + celcius + "°C = (" + fahrenheit + "°F - 32) * 5/9";
+}
+
+
+function resetButton() {
+  var Input = document.getElementById("input");
+  var result = document.getElementById("hasil");
+  var logic = document.getElementById("rumus");
+
+  Input.value = "";
+  result.textContent = "";
+  logic.textContent = "";
+}

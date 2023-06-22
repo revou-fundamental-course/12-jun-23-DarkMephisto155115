@@ -1,124 +1,131 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  background-color: rgb(226, 226, 226);
-}
-p {
-  color: black;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
-}
-.Top {
-  width: 50%;
-}
-
-.Button-div {
-  margin-top: 20px;
-  margin-left: 71px;
+  padding: 20px;
+  height: 100%;
 }
 
-.Button-div button {
-  border: 1px solid black;
-}
-#myInput {
-  border-radius: 3px;
-  border: 1px;
-  border-style: solid;
-  border-color: darkgrey;
-  height: 70px;
+h1 {
+  text-align: center;
 }
 
-.Input-div {
-  position: relative;
-  height: 40px;
-  width: 100%;
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
 }
-.Input-div input[type="number"] {
-  position: absolute;
-  background: white;
-  border: hsl(0, 0%, 18.82%);
-  box-shadow: black;
-  width: 40%;
-  height: 50px;
 
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  width: 380px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 2px;
+  margin-bottom: 10px;
   -moz-appearance: textfield;
 }
 
-.middle {
-  display: block;
+button {
+  display: inline-block;
+  width: 128px;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1.77px;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: rgb(1, 90, 255);
+}
+
+#result,
+#logic {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.footer {
+  margin: 0;
+  margin-bottom: 10px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.footer a {
+  color: blue;
+  display: inline-block;
   position: relative;
-  height: 40px;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: blue;
+}
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background-color: blue;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
   width: 100%;
 }
 
-.middle-box {
-  display: block;
-  position: absolute;
-  background: white;
-  border-radius: 3px;
-  border: 1px;
-  border-style: solid;
-  border-color: darkgrey;
-  box-shadow: black;
-  width: 40%;
-  height: 70px;
-  z-index: 1;
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+  }
 }
 
-.middle-p {
-  color: black;
-  z-index: 998;
-  margin-top: 25px;
+@media (max-width: 475px) {
+  html {
+    font-size: 75%;
+  }
+  .container {
+    width: auto;
+  }
+
+  input[type="number"] {
+    width: 94%;
+  }
+  button {
+    width: 100%;
+  }
 }
 
-.middle-2 {
-  display: block;
-  position: relative;
-  height: 40px;
-  width: 100%;
-  margin-top: 80px;
-}
-.middle-output {
-  display: block;
-  position: absolute;
-  background: white;
-  border: hsl(0, 0%, 18.82%);
-  box-shadow: black;
-  border-radius: 3px;
-  border: 1px;
-  border-style: solid;
-  border-color: darkgrey;
-  width: 40%;
-  height: 70px;
-  z-index: 1;
-}
-
-.middle-output p {
-  color: black;
-  margin-top: 25px;
-  z-index: 998;
-}
-
-.display-rumus {
-  display: block;
-  margin-top: 90px;
-}
-.display-rumus h1 {
-  color: black;
-}
-
-.display-rumus p {
-  color: black;
-}
-
-#myButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
+@media (max-width: 376px) {
+  html {
+    font-size: 60%;
+  }
+  input[type="number"] {
+    width: 94%;
+  }
+  button {
+    width: 100%;
+  }
 }
